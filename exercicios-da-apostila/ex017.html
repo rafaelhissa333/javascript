@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Detran - MG</h1>
+
+    Velocidade do Carro: <input type="number" name="vel" id="vel" placeholder="velocidade do carro"> km/h 
+
+    <input type="button" value="Verificar" onclick="verificar()">
+
+    <p id="res"></p>
+
+    <script>
+        function verificar(){
+            var vel = document.getElementById('vel')
+            var vel = Number(vel.value)
+            var res = document.getElementById('res')
+            if(vel > 80){
+                res.innerHTML = `<p>Velocidade Registrada: ${vel}km/h`
+                res.innerHTML += `<p>Você Ultrapassou a velocidade de 80km/h</p>`
+                res.innerHTML += `<p>Você foi MULTADO</p>`
+                res.innerHTML += `<p>Dirija com atenção</p>`
+            }else{
+                res.innerHTML = `<p>Velocidade Registrada: ${vel}km/h`
+                res.innerHTML += `<p>Dirija com atenção</p>`
+            }
+        }
+    </script>
+</body>
+</html>

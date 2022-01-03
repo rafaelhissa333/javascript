@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salário do Funcionário</title>
+</head>
+<body>
+    <header>
+        <h1>Salário do Funcionário</h1>
+    </header>
+    
+    <main>
+        <input type="text" name="dias" id="dias" placeholder="Dias Trabalhados:">
+        <input type="button" value="Calcular" onclick="calcular()">
+        <div id="res"></div>
+    </main>
+
+    <script>
+        function calcular(){
+            var dias = document.getElementById('dias')
+            var dias = Number(dias.value)
+            var res = document.getElementById('res')
+            var sal = 25 * 8 * dias
+            res.innerHTML = `<p>Salário do Funcionário: ${sal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>`
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Cadastro</title>
+    <script src="ex018.js" defer></script>
+    <link rel="stylesheet" href="ex018.css">
+</head>
+<body>
+    <h1>Inclusão-Exames</h1>
+    <hr>
+
+    <section class="sessao_1" id="opcoes_cliente">
+        <span class="menu_opcoes">Cliente:</span> <span class="asterisco">*&emsp;&emsp;&emsp;&emsp;</span>
+        <select class="selecao" id="selecao_1">
+            <optgroup label="Selecione a empresa">
+                <option value="cliente1">Laudos Online</option>
+                <option value="cliente2">Medical Laudos</option>
+                <option value="cliente3"selected>Gaia Multicoisas</option>
+            </optgroup>
+        </select>
+    </section>
+
+    <section class="sessao_1" id="opcoes_procedimento">
+        <span>Procedimento:</span> <span class="asterisco">*&emsp;</span>
+        <select class="selecao" id="procedimento">
+            <optgroup label="Selecione o procedimento">
+                <option value="procedimento1">Acuidade Visual</option>
+                <option value="procedimento2">Audiometria</option>
+                <option value="procedimento3">ECG - Eletroencefalograma</option>
+                <option value="procedimento4">EEG - Eletroencefalograma</option>
+                <option value="procedimento5">Espirometria</option>
+                <option value="procedimento6">RX - Raio X</option>
+            </optgroup>
+        </select>
+    </section>
+
+    <section class="sessao_1" id="opcoes_exame">
+        <span>Tipo de Exame:</span> <span class="asterisco">*&ensp;</span>
+        <select class="selecao" id="exame">
+            <optgroup label="Selecione o tipo de exame">
+                <option value="exame1">Admissional</option>
+                <option value="exame2">Demissional</option>
+                <option value="exame3">Periódico</option>
+                <option value="exame4">Mudança de função</option>
+                <option value="exame5">Concurso</option>
+            </optgroup>
+        </select>
+    </section>
+
+    <section class="sessao_1">Data do Exame: &emsp;<input type="date" name="data_exame" id="data_exame"></section>
+
+    <hr>
+
+    <p>
+        Nome: <input type="text" name="nome" id="nome" placeholder="Nome:">
+        RG: <input type="text" name="rg" id="rg" placeholder="Carteira de Identidade:">
+        CPF: <input type="text" name="cpf" id="cpf" placeholder="CPF:">
+        Empresa: <input type="text" name="empresa" id="empresa" placeholder="Empresa">
+    </p>
+    <p>
+        Data de Nascimento: <input type="date" name="nasc" id="nasc">
+        Data do Exame: <input type="date" name="data_exame" id="data_exame">
+        Função: <input type="text" name="funcao" id="funcao" placeholder="Função do Paciente:">
+    </p>
+    <input type="button" value="Verificar" onclick="Verificar()">
+    <div id="res"></div>
+</body>
+</html>

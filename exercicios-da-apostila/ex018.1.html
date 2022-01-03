@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSE - Home</title>
+    <link rel="stylesheet" href="ex018.css">
+</head>
+<body>
+
+    <h1>Tribunal Superior Eleitoral - TSE</h1>
+    <hr>
+
+    Nome: <input type="text" name="nome" id="nome" placeholder="Digite o nome:">
+
+    Data de Nascimento: <input type="date" name="data_nasc" id="data_nasc">
+    <input type="submit" value="Verificar" onclick="verificar()">
+
+    <div id="res"></div>
+
+    <script>
+        function verificar(){
+            var nome = document.getElementById('nome').value
+
+            var ano_atual = new Date().getFullYear()
+            var mes_atual = new Date().getMonth() + 1
+            
+            var data_nasc = document.getElementById('data_nasc').value
+
+            var ano_nasc = data_nasc.substr(0,4)
+            var mes_nasc = data_nasc.substr(5,2)
+
+            var res = document.getElementById('res')
+
+            var idade = ano_atual - ano_nasc
+
+            if(mes_nasc <= mes_atual && idade >= 18){
+                
+                res.innerHTML = `<p>Nome: ${nome}</p>`
+                res.innerHTML += `<p>Idade: ${idade} anos</p>`
+                res.innerHTML += `<P>VOTO OBRIGATÓRIO</P>`
+            }else{
+
+                res.innerHTML = `<p>Nome: ${nome}</p>`
+                res.innerHTML += `<p>Idade: ${idade - 1} anos</p>`
+                res.innerHTML += `<P>VOTO NÃO OBRIGATÓRIO</P>`
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço Promocional</title>
+</head>
+<body>
+    <h1>Preço Promocional</h1>
+    <input type="number" name="preco" id="preco" placeholder="Digite o Preço:">
+    <input type="button" value="Calcular" onclick="calcular()">
+    <div id="res"></div>
+
+    <script>
+        function calcular(){
+            var preco = document.getElementById('preco')
+            var preco = Number(preco.value)
+            var res = document.getElementById('res')
+            var desconto = preco - ((5/100) * preco)
+            res.innerHTML = `<p>O Produto com 5% de desconto stá saindo a ${desconto.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>`
+        }
+    </script>
+</body>
+</html>

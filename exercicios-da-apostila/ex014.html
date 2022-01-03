@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="ex014/favicon.ico" type="image/x-icon">
+    <title>Locadora de Veículos</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        img{
+
+        }
+        h1{
+            display: inline;       
+            color: #00974A;
+            position: absolute;
+            right: 20px;
+            top: 100px;
+            font-family: 'Pushster', cursive;
+        }
+        div.clear{
+            clear: both;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Pushster&display=swap');
+    </style>
+</head>
+<body>
+    <header>
+        <img src="ex014/logo-localiza.png" alt="Logo da Localiza Hertz">
+        <h1>Aluguel De Carros</h1>
+        <div class="clear"></div>
+        <hr>
+    </header>
+    <main>
+        km percorridos: <input type="number" name="km" id="km" placeholder="km percorridos:">
+
+        Dias com o carro: <input type="number" name="dias" id="dias" placeholder="Dias com o carro:">
+
+        <input type="button" value="Calcular" onclick="calcular()">
+    </main>
+
+    <div id="res"></div>
+
+    <script>
+        function calcular(){
+            var km = document.getElementById('km')
+            var km = Number(km.value)
+            var dias = document.getElementById('dias')
+            var dias = Number(dias.value)
+            var total = (90 * dias) + (0.20 * km)
+            var res = document.getElementById('res')
+            res.innerHTML = `<p>Total a pagar: ${total.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>`                     
+        }
+    </script>
+</body>
+</html>

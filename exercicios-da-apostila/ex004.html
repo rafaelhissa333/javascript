@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="ex004/favicon.ico" type="image/x-icon">
+    <title>Exercício 004</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Soma</h1>
+    <p>1° Numero: <input type="number" name="num1" id="num1"></p>
+    <p>2° Numero: <input type="number" name="num2" id="num2"></p>
+    <input type="button" value="Somar" onclick="somar()">
+    <div id="res"></div>
+
+    <script>
+        function somar(){
+            var num1 = window.document.querySelector('input#num1')
+            var num1 = Number(num1.value)
+            var num2 = window.document.getElementById('num2')
+            var num2 = Number(num2.value)
+            var soma = num1 + num2
+            var res = window.document.getElementById('res')
+            res.innerHTML = `<p>Resultado: A soma entre <strong>${num1}</strong> e <strong>${num2}</strong> é <strong>${soma}</strong></p>`
+        }
+    </script>
+</body>
+</html>

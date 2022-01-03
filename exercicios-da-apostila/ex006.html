@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antecessor e Sucessor</title>
+    <style>
+        body{
+            font-size: 16px;
+            font-family: monospace;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Antecessor e Sucessor</h1>
+    <p>Digite um número Inteiro: <input type="number" name="n" id="n"></p>
+    <input type="button" value="Prosseguir" onclick="verificar()">
+    <div id="res"></div>
+
+    <script>
+        function verificar(){
+            var n = window.document.getElementById('n')
+            var n = parseFloat(n.value)
+            var suc = n+1
+            var ant = n-1
+            var res = window.document.getElementById('res')
+            res.innerHTML = `<p>O antecessor  e sucessor de <strong>${n}</strong> são os números <strong>${ant}</strong> e <strong>${suc}</strong> respectivamente</p>`
+        }
+    </script>
+</body>
+</html>

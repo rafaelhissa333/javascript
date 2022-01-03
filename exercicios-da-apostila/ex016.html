@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fumante</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Calcular o tempo de vida de um fumante</h1>
+        <hr>
+    </header>
+
+    <main>
+
+        <p>
+            Cigarros por dia: <input type="number" name="quantidade_cigarro_dia" id="quantidade_cigarro_dia" placeholder="quantidade_cigarro_dia">
+        </p>
+
+
+
+        <P>
+            Anos Fumando: <input type="number" name="anos" id="anos" placeholder="Anos Fumando">
+        </P>
+
+        <P>
+            <input type="button" value="Calcular" onclick="Calcular()">
+        </P>
+
+        <p id="res"></p>
+
+    </main>
+
+    <script>
+        function Calcular(){
+            var res = document.getElementById('res')
+            var quantidade_cigarro_dia = document.getElementById('quantidade_cigarro_dia')
+            var quantidade_cigarro_dia = Number(quantidade_cigarro_dia.value)
+            var anos = document.getElementById('anos')
+            var anos = Number(anos.value)
+            var tempo_vida_perdida_dia = 10 * quantidade_cigarro_dia
+            var tempo_vida_perdida_anos = (tempo_vida_perdida_dia * 365) * anos
+            var total_em_anos = ((tempo_vida_perdida_anos / 60) / 24) / 365     
+
+            res.innerHTML = `<p>Tempo de Vida perdido no dia (min): ${tempo_vida_perdida_dia} minutos</p>`
+
+            res.innerHTML += `<p>Tempo em minutos de vida perdido em ${anos} anos: ${tempo_vida_perdida_anos} minutos</p>`
+
+            res.innerHTML += `<p>Tempo de Vida perdido total em ${anos} anos: ${parseInt(total_em_anos)} anos</p>`
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversão de Real para Dolares</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #EDB34E;
+            color: #f11010;
+        }
+        h1{
+            text-align: center;
+
+        }
+        h1:hover{
+            text-decoration: underline;
+            color: #F7633E;
+        }
+        p{
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversão de Real para Dolar</h1>
+    <span>
+        Valor em Real: <input type="number" name="real" id="real" placeholder="Reais R$:">
+    </span>
+    <span>
+        Valor em Dolar: <input type="number" name="dolar" id="dolar" placeholder="Dolares US$:">
+        
+        
+    </span>
+    <input type="button" value="Prosseguir" onclick="converter()">
+    <div id="res"></div>
+
+    <script>
+        function converter(){
+            var real = window.document.querySelector('input#real')
+            var real = Number(real.value)
+            var dolar = real / 5.68
+            var res = window.document.querySelector('div#res')
+            res.innerHTML = `<p>Você pode comprar ${dolar.toLocaleString('pt-BR', {style: 'currency', currency: 'USD'})}</p>`
+
+        }
+    </script>
+</body>
+</html>

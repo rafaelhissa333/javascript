@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="ex004/favicon.ico" type="image/x-icon">
+    <title>Conversão de Medidas</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap');
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        h1{
+            font-family: 'Oooh Baby', cursive;
+            text-align: center;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversão de Medidas</h1>
+    <p>Digite uma distância em metros(m): <input type="number" name="d" id="d" placeholder="Distância(m):"></p>
+    <input type="button" value="Converter" onclick="converter()">
+    <div id="res"></div>
+
+    <script>
+        function converter(){
+            var d = window.document.querySelector('input#d')
+            var d = Number(d.value)
+            var res = window.document.getElementById('res')
+            var Km = d/1000
+            var Hm = d/100
+            var Dam = d/10
+            var dm = d*10
+            var cm = d*100
+            var mm = d*1000
+            res.innerHTML = `<p>Km: ${Km}Km</p>`
+            res.innerHTML += `<p>Hm: ${Hm}Hm</p>`
+            res.innerHTML += `<p>Dam: ${Dam}Dam</p>`
+            res.innerHTML += `<p>dm: ${dm}dm</p>`
+            res.innerHTML += `<p>cm: ${cm}cm</p>`
+            res.innerHTML += `<p>mm: ${mm}mm</p>`
+        }
+    </script>
+</body>
+</html>

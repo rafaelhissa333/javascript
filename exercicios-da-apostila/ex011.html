@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="ex004/favicon.ico" type="image/x-icon">
+    <title>Baskara</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Equação do Segundo Grau</h1>
+    <hr>
+    <input type="number" name="n1" id="n1" placeholder="1° número">
+    <input type="number" name="n2" id="n2" placeholder="2° número">
+    <input type="number" name="n3" id="n3" placeholder="3° número"> 
+    <input type="button" value="Calcular" onclick="calcular()">
+
+    <div id="res"></div>
+
+    <script>
+        function calcular(){
+
+            var n1 = window.document.getElementById('n1')
+            var n2 = window.document.getElementById('n2')
+            var n3 = window.document.getElementById('n3')
+
+            var n1 = Number(n1.value)
+            var n2 = Number(n2.value)
+            var n3 = Number(n3.value)
+
+            var delta = (n2**2)-4*(n1*n3)
+
+            var res = window.document.getElementById('res')
+            
+            res.innerHTML = `<p>${delta}</p>`
+        }
+    </script>
+</body>
+</html>

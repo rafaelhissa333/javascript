@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+        #descricao{
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nacionalidades</h1>
+    <p id="descricao">Programa criado para verificar a nacionalidade dos usuários</p>
+    <p>Nome: <input type="text" name="nome" id="nome" placeholder="Digite aqui o seu nome:"></p>
+    <p>País: <input type="text" name="pais" id="pais" placeholder="Digite aqui seu país de origem"></p>
+    <input type="button" value="Prosseguir" onclick="resultado()">
+    <div id="res"></div>
+    <script>
+        function resultado(){
+            var nome = document.getElementById('nome')
+            var nome = String(nome.value)
+            var pais = document.querySelector('input#pais')
+            var pais = String(pais.value)
+            res.innerHTML = `<p>Olá, ${nome}!</p>`
+            if(pais == 'Brasil'){
+                res.innerHTML += `<p>A sua nacionalidade é Brasileira</p>`
+            }
+            else{
+                res.innerHTML += `Você tem a nacionalidade extrangeira`
+            }
+        }
+    </script>
+</body>
+</html>

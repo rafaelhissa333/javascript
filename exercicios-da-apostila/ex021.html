@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ano Bissextos</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+        }
+        h1{
+            font-size: 1.5em;
+            text-align: center;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>App do ano bissexto</h1>
+    <p>Digite um ano para saber se ele é bissexto: <input type="number" name="ano" id="ano" placeholder="Ano:">
+    <input type="button" value="Verificar" onclick="verificar()">
+    </p>
+
+    <div id="res"></div>
+
+    <script>
+        function verificar(){
+            var ano = document.querySelector('input#ano')
+            var ano = Number(ano.value)
+            var ultimos_digitos = (ano.toString()).substr(-2)
+            var res = document.getElementById('res')
+
+            
+
+            if((ultimos_digitos == '00' && ano % 400 == 0) || (ultimos_digitos != '00' && ano % 4 == 0)){
+                res.innerHTML = 'ANO BISSEXTO'
+                res.style.color = 'green'
+            }else{
+                res.innerHTML = 'ANO NÃO BISSEXTO'
+                res.style.color = 'red'
+            }
+        }
+    </script>
+</body>
+</html>

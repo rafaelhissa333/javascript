@@ -1,0 +1,13 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    font-size: 1em;
+}
+.asterisco{
+    color: red;
+    font-weight: bolder;
+}
+.sessao_1{
+    margin-top: 20px;    
+}

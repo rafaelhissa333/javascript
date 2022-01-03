@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área da Parede</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            text-decoration: underline;
+            text-align: center;
+            border: 1px solid red;
+            height: 50px;
+            line-height: 50px;
+            margin: 50px auto 50px auto;
+            padding: 50px;
+            width: 388px;
+            background-color: rgb(175, 187, 121);
+            color: rgb(27, 38, 192);
+        }
+        h1:hover{
+            background-color: rgb(27, 38, 192);
+            color: rgb(175, 187, 121);
+            cursor: pointer;
+        }
+        h1:active{
+            color: red;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcular a área da parede</h1>
+    Largura: <input type="number" name="largura" id="largura" placeholder="Digite a Largura:">
+    Altura: <input type="number" name="altura" id="altura" placeholder="Digite a Altura:">
+    <input type="button" value="Calcular" onclick="prosseguir()">
+    <p id="res1"></p>
+    <p id="res2"></p>
+
+    <script>
+        function prosseguir(){
+            var largura = window.document.getElementById('largura')
+            var altura = window.document.querySelector('input#altura')
+            var largura = Number(largura.value)
+            var altura = Number(altura.value)
+            var area = largura * altura
+            var tinta = area / 2
+            res1.innerHTML = `<p>Área da parede: ${area}m²</p>`
+            res2.innerHTML = `<p>Quantidade de latas de tinta: ${tinta} latas</p>` 
+        }
+    </script>
+</body>
+</html>

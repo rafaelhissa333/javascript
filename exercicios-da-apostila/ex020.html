@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Par ou ímpar</title>
+    <style>
+        body{
+            font-family: monospace;
+            background-color: rgb(144, 195, 197);
+            font-weight: bolder;
+            font-size: 16px;
+        }
+        h1{
+            text-decoration: underline;
+            text-align: center;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>PAR OU ÍMPAR</h1>
+    Digite um Número: <input type="number" name="num" id="num">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <hr>
+    <div id="res"></div>
+
+    <script>
+        function verificar(){
+            var num = document.getElementById('num')
+            var num = Number(num.value)
+            var res = document.querySelector('div#res')
+
+            if(num % 2 == 0){
+                res.innerHTML = 'PAR'
+            }else{
+                res.innerHTML = 'ÍMPAR'
+            }
+        }
+    </script>
+</body>
+</html>

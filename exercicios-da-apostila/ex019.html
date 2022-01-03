@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média de Notas</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Média dos alunos</h1>
+
+    <p>Nome: <input type="text" name="nome" id="nome" placeholder="Digite o nome:"></p>
+
+    <p>
+        Nota 1: <input type="number" name="n1" id="n1">
+    </p>
+
+    <p>
+        Nota 2: <input type="number" name="n2" id="n2">
+    </p>
+
+    <p>
+        <input type="button" value="Calcular" onclick="calcular()">
+    </p>
+
+    <hr>
+
+    <div id="res"></div>
+
+    <script>
+        function calcular(){
+            var nome = document.getElementById('nome').value
+            var n1 = document.getElementById('n1')
+            var n1 = Number(n1.value)
+            var n2 = document.getElementById('n2')
+            var n2 = Number(n2.value)
+            var media = (n1 + n2) / 2
+            var res = document.getElementById('res')
+            
+
+            if(media >= 7){
+                res.innerHTML = `Nome Do Aluno: ${nome}`
+                res.innerHTML += `<p>Média: ${media}</p>`
+                res.innerHTML += `<p>APROVADO</p>`
+            }else{
+                res.innerHTML = `Nome Do Aluno: ${nome}`
+                res.innerHTML += `<p>Média: ${media}</p>`
+                res.innerHTML += `<p>REPROVADO</p>`
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço da Passagem</title>
+</head>
+<body>
+    <h1>Preço da Passagem</h1>
+    Distância desejada(km): <input type="number" name="dist" id="dist" placeholder="Distância(km):">
+    <input type="submit" value="Calcular" onclick="calcular()">
+    <div id="res"></div>
+
+    <script>
+        function calcular(){
+            var res = document.getElementById('res')
+            var dist = document.querySelector('input#dist').value
+            if(dist <= 200){
+                var preco = (dist * 0.50).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+
+                res.innerHTML = `<p>Preço da passagem: ${preco}</p>`
+            }else{
+                var preco = (dist * 0.45).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+
+                res.innerHTML = `<p>Preço da passagem: ${preco}</p>`
+            }
+        }
+    </script>
+</body>
+</html>

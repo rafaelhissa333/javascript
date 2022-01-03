@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="ex004/favicon.ico" type="image/x-icon">
+    <title>Multiplicação e Divisão</title>
+    <style>
+        body{
+            font-family: cursive;
+            font-size: 16px;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculador de Multiplicação e Divisão</h1>
+    <p>Digite um número: <input type="number" name="n" id="n"></p>
+    <input type="button" value="Calcular" onclick="calcular()">
+    <div id="res"></div>
+    <script>
+        function calcular(){
+            var n = window.document.getElementById('n')
+            var n = Number(n.value)
+            var res = window.document.getElementById('res')
+            var dobro = n*2
+            var divi = n/3
+            res.innerHTML = `<p>Dobro de <strong>${n}</strong>: <strong>${dobro}</strong></p>`
+            res.innerHTML += `Terça parte de <strong>${n}</strong>: <strong>${divi}</strong>`
+        }
+    </script>
+</body>
+</html>
