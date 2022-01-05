@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt.br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do terreno</title>
+</head>
+<body>
+    <h1>Calculando a área do terreno</h1>
+
+    <p>
+        Largura: <input type="number" name="lar" id="lar" placeholder="Largura (m²): ">
+    </p>
+
+    <p>
+        Comprimento: <input type="number" name="comp" id="comp" placeholder="Comprimento (m²): ">
+    </p>
+
+    <input type="button" value="Calcular" onclick="calcular()">
+    <div id="res"></div>
+
+    <script>
+        function calcular(){
+            let res = document.getElementById('res')
+            let lar = Number(document.getElementById('lar').value)
+            let comp = Number(document.querySelector('input#comp').value)
+
+            let area = lar * comp
+
+            if(area < 100){
+                res.innerHTML = `<P>Área Total: ${area}m²</P>`
+                res.innerHTML += '<P>TERRENO POPULAR</P>'
+            }else if(area >= 100 && area <= 500){
+                res.innerHTML = `<P>Área Total: ${area}m²</P>`
+                res.innerHTML += '<P>TERRENO MASTER</P>'
+            }else{
+                res.innerHTML = `<P>Área Total: ${area}m²</P>`
+                res.innerHTML += '<P>TERRENO VIP</P>'
+            }
+        }
+    </script>
+</body>
+</html>

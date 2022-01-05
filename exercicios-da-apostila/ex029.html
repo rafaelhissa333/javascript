@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste de Salário</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        .tempo{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcular o novo salário do funcionário</h1>
+    <hr>
+
+    <p>
+        Nome: <input class="tempo" type="text" name="nome" id="nome" placeholder="Digite o nome do funcionário">
+    </p>
+
+    <p>
+        Salário: <input class="tempo" type="number" name="sal" id="sal" placeholder="Digite o salário do funcionário">
+    </p>
+
+    <p>
+        Tempo de empresa: <input class="tempo" type="number" name="anos" id="anos" placeholder="Digite o tempo de empresa:">
+    </p>
+
+    <input type="button" value="Calcular" onclick="calcular()">
+
+    <div id="res"></div>
+
+    <script>
+        function calcular(){
+            let res = document.getElementById('res')
+            let nome = String(document.querySelector('input#nome').value)
+            let sal = Number(document.getElementById('sal').value)
+            let anos = Number(document.getElementById('anos').value)
+
+             if(anos <= 3){
+                 let N_sal = sal + ((3/100)*sal)
+                 res.innerHTML = `<p>O novo salário do funcionário ${nome} é de ${N_sal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>`
+             }else if(anos > 3 && anos < 10){
+                let N_sal = sal + ((12.5/100)*sal)
+                res.innerHTML = `<p>O novo salário do funcionário ${nome} é de ${N_sal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>`
+             }else{
+                let N_sal = sal + ((20/100)*sal)
+                res.innerHTML = `<p>O novo salário do funcionário ${nome} é de ${N_sal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>`
+             }
+        }
+    </script>
+</body>
+</html>

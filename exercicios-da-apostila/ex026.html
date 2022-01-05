@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior e Menor</title>
+</head>
+<body>
+    <h1>Comparador de números</h1>
+
+    <p>
+        Primeiro Número: <input type="number" name="n1" id="n1" placeholder="Digite o primeiro número: ">
+    </p>
+    <p>
+        Segundo Número: <input type="number" name="n2" id="n2" placeholder="Digite o segundo número: ">
+    </p>
+    <input type="submit" value="Comparar" onclick="comparar()">
+    <div id="res"></div>
+
+    <script>
+        function comparar(){
+            var res = document.getElementById('res')
+            var n1 = document.querySelector('input#n1').value
+            var n2 = document.getElementById('n2').value
+
+            if(n1 > n2){
+                res.innerHTML = `<P>${n1} É MAIOR QUE ${n2}</P>`
+            }else if(n1 < n2){
+                res.innerHTML = `<P>${n2} É MAIOR QUE ${n1}</P>`
+            }else{
+                res.innerHTML = `<P>OS DOIS NÚMEROS SÃO IGUAIS</P>`
+            }
+        }
+    </script>
+</body>
+</html>

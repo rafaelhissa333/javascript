@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triângulos</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;            
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+        .retas{
+            width: 220px;
+        }
+    </style>
+</head>
+<body>
+    <h1>&Delta;Triângulos&Delta;</h1>
+    <hr>
+    <p>
+        Digite abaixo o tamanho de tres segmentos de reta para saber se ela forma um triângulo
+    </p>
+    <p>
+        1° Reta: <input class="retas" type="number" name="reta_1" id="reta_1" placeholder="Digite o tamanho da primeira reta:">
+    </p>
+
+    <p>
+        2° Reta: <input class="retas" type="number" name="reta_2" id="reta_2" placeholder="Digite o tamanho da segunda reta:">
+    </p>
+
+    <p>
+        3° Reta: <input class="retas" type="number" name="reta_3" id="reta_3" placeholder="Digite o tamanho da terceira reta:">
+    </p>
+
+    <p>
+        <input type="submit" value="Calcular" onclick="calcular()">
+    </p>
+
+    <div id="res"></div>
+    <img src="" alt="">
+
+    <script>
+        function calcular(){
+            var res = document.getElementById('res')
+            var reta_1 = document.getElementById('reta_1')
+            var reta_1 = Number(reta_1.value)
+            var reta_2 = document.getElementById('reta_2')
+            var reta_2 = Number(reta_2.value)
+            var reta_3 = document.getElementById('reta_3')
+            var reta_3 = Number(reta_3.value)
+            
+            if((reta_1 < reta_2 + reta_3 && reta_2 < reta_1 + reta_3 && reta_3 < reta_2 + reta_1) && (reta_1 == reta_2 && reta_2 == reta_3)) {    
+                var tipo = "EQUILÁTERO"
+                res.innerHTML = `<p>AS 3 RETAS FORMAM UM TRINÂNGULO <strong>${tipo}</strong></p>`
+                res.style.color = 'green'
+                res.innerHTML +=  '<p><img src="/imagens/equilatero.png" alt="trângulo equilátero"></p>'   
+            }else if((reta_1 < reta_2 + reta_3 && reta_2 < reta_1 + reta_3 && reta_3 < reta_2 + reta_1) && (reta_1 == reta_2 || reta_1 == reta_3 || reta_2 == reta_3)){
+                var tipo = "ISÓSCELES"
+                res.innerHTML = `<p>AS 3 RETAS FORMAM UM TRINÂNGULO <strong>${tipo}</strong></p>`
+                res.style.color = 'green'
+                res.innerHTML +=  '<p><img src="/imagens/isoscele.png" alt="trângulo isóscele"></p>'
+            }else if((reta_1 < reta_2 + reta_3 && reta_2 < reta_1 + reta_3 && reta_3 < reta_2 + reta_1) && (reta_1 != reta_2 && reta_2 != reta_3)){
+                var tipo = "ESCALENO"
+                res.innerHTML = `<p>AS 3 RETAS FORMAM UM TRINÂNGULO <strong>${tipo}</strong></p>`
+                res.style.color = 'green'
+                res.innerHTML +=  '<p><img src="/imagens/escaleno.png" alt="trângulo escaleno"></p>'
+            }else{                
+                res.innerHTML = `<p>As três retas <strong>NÃO</strong> podem formar um triângulo</p>`
+                res.style.color = 'red'
+                res.innerHTML +=  '<p><img src="/imagens/erro.png" alt="erro"></p>'                   
+            }
+        }
+    </script>
+</body>
+</html>
