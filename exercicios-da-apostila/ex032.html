@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Advinhação</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            text-decoration: underline;
+            text-align: center;
+        }
+        #texto{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>JOGO DA ADVINHAÇÃO</h1>
+    <hr>
+    <p id="texto">Tente advinhar um número entre 0 e 10 que será sorteado pelo computador.</p>
+
+    <p>
+        Digite um numero entre 1 e 5: <input type="number" name="num" id="num" placeholder="1 a 5: ">
+        <input type="button" value="JOGAR" onclick="jogar()">
+    </p>
+
+    <div id="res"></div>
+
+    <script>
+        function jogar(){
+            var comp = Math.floor(Math.random() * 5) + 1;
+            var res = document.getElementById('res')
+            var num = document.getElementById('num').value
+
+            res.innerHTML = `<p>Número escolhido pelo jogador: ${num}</p>`
+            res.innerHTML += `<p>Número escolhido pelo computador: ${comp}</p>`
+
+            if(num == comp){
+                res.innerHTML += `PARABÉNS, VOCÊ ACERTOU!`
+            }else if((num != comp) && (num > 0 && num <= 5)){
+                res.innerHTML += `VOCÊ ERROU! TENTE NOVAMENTE`
+            }else{
+                res.innerHTML += `ERRO! O NÚMERO QUE VOCÊ ESCOLHEU NÃO É VÁLIDO`
+            }
+        }
+    </script>
+</body>
+</html>
