@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jo-Ken-Po</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+        #botao{
+            width: 150px;
+            height: 50px;
+            font-size: 20px;
+            font-weight: bolder;
+            background-image: linear-gradient(to bottom, rgb(0, 102, 255), transparent);
+            color: yellow;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.445);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jo-Ken-Po</h1>
+    <hr>
+
+        <p>
+            <form action="">Jogador 1:
+                <input type="radio" name="jog1" value="Pedra" checked>
+                <label for="pedra1">Pedra</label>
+                <input type="radio" name="jog1" value="Papel">
+                <label for="papel1">Papel</label>
+                <input type="radio" name="jog1" value="Tesoura">
+                <label for="tesoura1">Tesoura</label>
+            </form>
+        </p>
+
+    <p>
+        <form action="">Jogador 2:
+            <input type="radio" name="jog2"checked value="Pedra">
+            <label for="pedra2">Pedra</label>
+            <input type="radio" name="jog2" value="Papel">
+            <label for="papel2">Papel</label>
+            <input type="radio" name="jog2" value="Tesoura">
+            <label for="tesoura2">Tesoura</label>
+        </form>
+    </p>
+
+    <p>
+        <input type="button" value="JOGAR" onclick="jogar()" id="botao">
+    </p>
+    
+    <div id="res"></div>
+
+    <script>
+        function jogar(){
+            var res = document.getElementById('res')
+
+            var jog1 = document.getElementsByName('jog1')
+            for(var i = 0; i < jog1.length; i++){
+                if(jog1[i].checked){
+                    var jog1 = jog1[i].value
+                }
+            }
+
+            var jog2 = document.getElementsByName('jog2')
+            for(var j = 0; j < jog2.length; j++){
+                if(jog2[j].checked){
+                    var jog2 = jog2[j].value
+                }
+            }
+            if((jog1 == 'Pedra' && jog2 == 'Pedra') || (jog1 == 'Papel' && jog2 == 'Papel') || (jog1 == 'Tesoura' && jog2 == 'Tesoura') ){
+                res.innerHTML = `<p>(Jogador 1: ${jog1}) X (Jogador 2: ${jog2})</p>`
+                res.innerHTML += 'Resultado: EMPATE'
+            }else if((jog1 == 'Pedra' && jog2 == 'Tesoura') || (jog1 == 'Papel' && jog2 == 'Pedra') || (jog1 == 'Tesoura' && jog2 == 'Papel')){
+                res.innerHTML = `<p>(Jogador 1: ${jog1}) X (Jogador 2: ${jog2})</p>`
+                res.innerHTML += 'Resultado: VITÓRIA DO JOGADOR 1'
+            }else{
+                res.innerHTML = `<p>(Jogador 1: ${jog1}) X (Jogador 2: ${jog2})</p>`
+                res.innerHTML += 'Resultado: VITÓRIA DO JOGADOR 2'
+            }
+        }
+    </script>
+</body>
+</html>
