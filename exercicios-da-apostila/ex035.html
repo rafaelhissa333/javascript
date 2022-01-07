@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locadora de Veículos</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1>Locadora de Veículos</h1>
+    <hr>
+
+    <p>
+        <form action="">Tipo de Carro:
+            <div>
+                <input type="radio" name="tipo" id="popular" checked value="Popular">
+                <label for="popular">Popular &#x1F698;</label>
+            </div>
+            <div>
+                <input type="radio" name="tipo" id="luxo" value="Luxo">
+                <label for="luxo">Luxo &#x1F697;</label>
+            </div>
+        </form>
+    </p>
+
+    <p>
+        Dias Alugado: <input type="number" name="dias" id="dias" placeholder="Dias Alugado:">
+    </p>
+
+    <p>
+        Km percorridos: <input type="number" name="km" id="km" placeholder="Km's percorridos: ">
+    </p>
+
+    <p>
+        <input type="submit" value="Calcular" onclick="calcular()">
+    </p>
+
+    <div id="res"></div>
+
+    <script>
+        function calcular(){
+            var res = document.getElementById('res')
+            var dias = Number(document.getElementById('dias').value)
+            var km = Number(document.getElementById('km').value)
+            var tipo = document.getElementsByName('tipo')
+            for (var i = 0; i < tipo.length; i++) {
+                if(tipo[i].checked){
+                    var tipo = tipo[i].value
+                }                
+            }
+            switch (tipo) {
+                case 'Popular':
+                    if(km <= 100){
+                        var preco = (90 * dias) + (0.20 * km)
+                        res.innerHTML = `<p>Tipo de Carro: ${tipo}</p>`
+                        res.innerHTML += `<p>Dias alugado: ${dias} dias</p>`
+                        res.innerHTML += `<p>Km percorridos: ${km}km</p>`
+                        res.innerHTML += `<p>Valor a pagar: ${preco.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>`
+                    }else{
+                        var preco = (90 * dias) + (0.10 * km) 
+                        res.innerHTML = `<p>Tipo de Carro: ${tipo}</p>`
+                        res.innerHTML += `<p>Dias alugado: ${dias} dias</p>`
+                        res.innerHTML += `<p>Km percorridos: ${km}km</p>`
+                        res.innerHTML += `<p>Valor a pagar: ${preco.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>`
+                    }
+                break;
+
+                default:
+                    if(km <= 200){
+                        var preco = (150 * dias) + (0.30 * km)
+                        res.innerHTML = `<p>Tipo de Carro: ${tipo}</p>`
+                        res.innerHTML += `<p>Dias alugado: ${dias} dias</p>`
+                        res.innerHTML += `<p>Km percorridos: ${km}km</p>`
+                        res.innerHTML += `<p>Valor a pagar: ${preco.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>`
+                    }else{
+                        var preco = (150 * dias) + (0.25 * km) 
+                        res.innerHTML = `<p>Tipo de Carro: ${tipo}</p>`
+                        res.innerHTML += `<p>Dias alugado: ${dias} dias</p>`
+                        res.innerHTML += `<p>Km percorridos: ${km}km</p>`
+                        res.innerHTML += `<p>Valor a pagar: ${preco.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>`
+                        }
+                        break;
+            }
+        }
+    </script>
+</body>
+</html>
