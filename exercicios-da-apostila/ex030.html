@@ -58,21 +58,21 @@
                 var tipo = "EQUILÁTERO"
                 res.innerHTML = `<p>AS 3 RETAS FORMAM UM TRINÂNGULO <strong>${tipo}</strong></p>`
                 res.style.color = 'green'
-                res.innerHTML +=  '<p><img src="/imagens/equilatero.png" alt="trângulo equilátero"></p>'   
+                res.innerHTML += '<p><img src="imagens/equilatero.png" alt="trângulo equilátero"></p>'   
             }else if((reta_1 < reta_2 + reta_3 && reta_2 < reta_1 + reta_3 && reta_3 < reta_2 + reta_1) && (reta_1 == reta_2 || reta_1 == reta_3 || reta_2 == reta_3)){
                 var tipo = "ISÓSCELES"
                 res.innerHTML = `<p>AS 3 RETAS FORMAM UM TRINÂNGULO <strong>${tipo}</strong></p>`
                 res.style.color = 'green'
-                res.innerHTML +=  '<p><img src="/imagens/isoscele.png" alt="trângulo isóscele"></p>'
+                res.innerHTML += '<p><img src="imagens/isoscele.png" alt="trângulo isóscele"></p>'
             }else if((reta_1 < reta_2 + reta_3 && reta_2 < reta_1 + reta_3 && reta_3 < reta_2 + reta_1) && (reta_1 != reta_2 && reta_2 != reta_3)){
                 var tipo = "ESCALENO"
                 res.innerHTML = `<p>AS 3 RETAS FORMAM UM TRINÂNGULO <strong>${tipo}</strong></p>`
                 res.style.color = 'green'
-                res.innerHTML +=  '<p><img src="/imagens/escaleno.png" alt="trângulo escaleno"></p>'
+                res.innerHTML += '<p><img src="imagens/escaleno.png" alt="trângulo escaleno"></p>'
             }else{                
                 res.innerHTML = `<p>As três retas <strong>NÃO</strong> podem formar um triângulo</p>`
                 res.style.color = 'red'
-                res.innerHTML +=  '<p><img src="/imagens/erro.png" alt="erro"></p>'                   
+                res.innerHTML +=  '<p><img src="imagens/erro.png" alt="erro"></p>'                   
             }
         }
     </script>
