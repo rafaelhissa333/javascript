@@ -41,38 +41,38 @@
 
 <a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex019.html" target="_blank">Ex019 - Média dos alunos</a>
 
-<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex20.html" target="_blank">Ex020 - PAR OU ÍMPAR</a>
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex020.html" target="_blank">Ex020 - PAR OU ÍMPAR</a>
 
-<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex21.html" target="_blank">Ex021 - App do ano bissexto</a>
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex021.html" target="_blank">Ex021 - App do ano bissexto</a>
 
-<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex22.html" target="_blank">Ex022 - Alistamento Militar</a>
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex022.html" target="_blank">Ex022 - Alistamento Militar</a>
 
-<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex23.html" target="_blank">Ex023 - Promoção de Dia das Mulheres</a>
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex023.html" target="_blank">Ex023 - Promoção de Dia das Mulheres</a>
 
-<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex24.html" target="_blank">Ex024 - Preço da Passagem</a>
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex024.html" target="_blank">Ex024 - Preço da Passagem</a>
 
-<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex25.html" target="_blank">Ex025 - Triângulos</a>
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex025.html" target="_blank">Ex025 - Triângulos</a>
 
-<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex26.html" target="_blank">Ex026 - Comparador de números</a>
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex026.html" target="_blank">Ex026 - Comparador de números</a>
 
-<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex27.html" target="_blank">Ex027 - Calculando a média das notas</a>
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex027.html" target="_blank">Ex027 - Calculando a média das notas</a>
 
-<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex28.html" target="_blank">Ex028 - Calculando a área do terreno</a>
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex028.html" target="_blank">Ex028 - Calculando a área do terreno</a>
 
-<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex29.html" target="_blank">Ex029 - Calcular o novo salário do funcionário</a>
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex029.html" target="_blank">Ex029 - Calcular o novo salário do funcionário</a>
 
-<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex30.html" target="_blank">Ex030 - Tipos de Triângulos</a>
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex030.html" target="_blank">Ex030 - Tipos de Triângulos</a>
 
-<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex31.html" target="_blank">Ex031 - Jo-Ken-Po</a>
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex031.html" target="_blank">Ex031 - Jo-Ken-Po</a>
 
-<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex32.html" target="_blank">Ex032 - JOGO DA ADVINHAÇÃO</a>
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex032.html" target="_blank">Ex032 - JOGO DA ADVINHAÇÃO</a>
 
-<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex33.html" target="_blank">Ex033 - Empréstimo Santander</a>
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex033.html" target="_blank">Ex033 - Empréstimo Santander</a>
 
-<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex34.html" target="_blank">Ex034 - IMC - Índice de massa corpórea</a>
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex034.html" target="_blank">Ex034 - IMC - Índice de massa corpórea</a>
 
-<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex35.html" target="_blank">Ex035 - Locadora de Veículos</a>
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex035.html" target="_blank">Ex035 - Locadora de Veículos</a>
 
-<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex36.html" target="_blank">Ex036 - Programa de Pontos Saudáveis</a>
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex036.html" target="_blank">Ex036 - Programa de Pontos Saudáveis</a>
 
-<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex37.html" target="_blank">Ex037 - Aumento de Salário</a>
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex037.html" target="_blank">Ex037 - Aumento de Salário</a>
