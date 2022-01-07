@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santander</title>
+</head>
+<body>
+    <h1>Empréstimo Santander</h1>
+    <hr>
+
+    <p>
+        Valor da Casa: <input type="number" name="val_casa" id="val_casa" placeholder="Valor da Casa: R$">
+    </p>
+        
+    <p>
+        Salário do Comprador: <input type="number" name="sal" id="sal" placeholder="Salário do Comprador: R$">
+    </p>
+
+    <p>
+        Anos Pagando: <input type="number" name="anos" id="anos" placeholder="Anos Pagando: ">
+    </p>
+
+    <p>
+        <input type="button" value="Calcular" onclick="calcular()">
+    </p>
+
+    <div id="dados"></div>
+
+    <div id="res"></div>
+
+    <script>
+        function calcular(){
+            var res = document.getElementById('res')
+            var dados = document.getElementById('dados')
+            var v_casa = Number(document.getElementById('val_casa').value)
+            var anos = document.getElementById('anos').value
+            var sal = Number(document.getElementById('sal').value)
+            var sal_30 = ((30/100)*sal)
+            var meses = anos * 12
+            var v_prestacao = v_casa / meses
+
+            dados.innerHTML = `<p>Valor da Casa: ${v_casa.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>`
+
+            dados.innerHTML += `<p>Anos pagando: ${anos} anos</p>`
+            
+            dados.innerHTML += `<p>Total de Prestações: ${meses} meses</p>`
+            
+            dados.innerHTML += `<p>Salário do solicitante: ${sal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>`
+            
+            dados.innerHTML += `<p>30% do salário do solicitante: ${sal_30.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>`
+            
+            dados.innerHTML += `<p>Valor da Prestação: ${v_prestacao.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>`
+
+            if(v_prestacao > sal_30){
+                res.innerHTML = `<p><strong>EMPRÉSTIMO NEGADO</strong></p>`
+                res.innerHTML += `<p>Você não possui renda suficiente para solicitar o empréstimo!</p>`
+                res.style.color = 'red'
+            }else{
+                res.innerHTML = `<p><strong>EMPRÉSTIMO APROVADO</strong></p>`
+                res.innerHTML += `<p>Você possui renda suficiente para solicitar o empréstimo!</p>`
+                res.style.color = 'green'
+            }
+        }
+    </script>
+</body>
+</html>
