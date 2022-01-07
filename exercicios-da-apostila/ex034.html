@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+</head>
+<body>
+    <h1>Índice de massa corpórea</h1>
+    <hr>
+
+    <p>
+        Peso (kg): <input type="number" name="peso" id="peso" placeholder="Peso (kg):"> 
+    </p>
+        
+    <p>
+        Altura (cm): <input type="number" name="alt" id="alt" placeholder="Exemplo: 185cm:">  
+    </p>
+
+    <p>
+        <input type="button" value="Calcular" onclick="calcular()">
+    </p>
+
+    <div id="res"></div>
+
+    <script>
+        function calcular(){
+            var res = document.getElementById('res')
+            var peso = Number(document.getElementById('peso').value)
+            var alt = Number(document.getElementById('alt').value)
+            var imc = peso / (alt**2)
+
+            if(imc < 18.5){
+                res.innerHTML = `IMC = ${imc.toFixed(2)}: ABAIXO DO PESO IDEAL`
+                res.style.color = 'red'
+            }else if(imc >= 18.5 && imc <= 25){
+                res.innerHTML = `IMC = ${imc.toFixed(2)} : PESO IDEAL`
+                res.style.color = 'green'
+            }else if(imc > 25 && imc <= 30){
+                res.innerHTML = `IMC = ${imc.toFixed(2)}: SOBREPESO`
+                res.style.color = 'red'
+            }else if(imc > 30 && imc <= 40){
+                res.innerHTML = `IMC = ${imc.toFixed(2)}: OBESIDADE`
+                res.style.color = 'red'
+            }else{
+                res.innerHTML = `IMC = ${imc.toFixed(2)}: OBESIDADE MÓRBIDA`
+                res.style.color = 'red'
+            }
+        }
+    </script>
+</body>
+</html>
