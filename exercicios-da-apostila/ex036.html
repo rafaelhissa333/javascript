@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa de Pontos Saudáveis</title>
+</head>
+<body>
+    <h1>Programa de Pontos Saudáveis</h1>
+    <hr>
+
+    <p>
+        Horas de atividade física no mês: <input type="number" name="horas" id="horas" placeholder="Horas/mês:">
+    </p>
+
+    <p>
+        <input type="button" value="Calcular" onclick="calcular()">
+    </p>
+
+    <div id="res"></div>
+
+    <script>
+        function calcular(){
+            var res = document.getElementById('res')
+            var horas = Number(document.getElementById('horas').value)
+
+            if(horas < 10){
+                var pontos = horas * 2
+                var valor = pontos * 0.05
+                res.innerHTML = `PODEMOS MELHORAR: VOCÊ FEZ APENAS <strong>${pontos}</strong> PONTOS NO MÊS E FATUROU <strong>${valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</strong>`
+                res.style.color = 'red'
+            }else if(horas >= 10 && horas <= 20){
+                var pontos = horas * 5
+                var valor = pontos * 0.05
+                res.innerHTML = `VOCÊ ESTÁ INDO BEM: VOCÊ FEZ <strong>${pontos}</strong> PONTOS NO MÊS E FATUROU <strong>${valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</strong>`
+                res.style.color = 'black'
+            }else{
+                var pontos = horas * 10
+                var valor = pontos * 0.05
+                res.innerHTML = `VOCÊ É UM ATLÉTA: VOCÊ FEZ <strong>${pontos}</strong> PONTOS NO MÊS E FATUROU <strong>${valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</strong>`
+                res.style.color = 'green'
+            }
+        }
+    </script>
+</body>
+</html>
