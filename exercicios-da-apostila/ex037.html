@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aumento</title>
+</head>
+<body>
+    <h1>Aumento de Salário</h1>
+    <hr>
+
+    <p>
+        Nome: <input type="text" name="nome" id="nome" placeholder="Nome do funcionário: ">
+    </p>
+
+    <p>
+        Salário: <input type="number" name="sal" id="sal" placeholder="Salário do funcionário R$: ">
+    </p>
+
+    <p>
+        <form action="">Gênero:
+            <div>
+                <input type="radio" name="sexo" id="fem" value="Feminino" checked>
+                <label for="">Feminino &#x1F469;</label>
+            </div>
+            <div>
+                <input type="radio" name="sexo" id="mas" value="Masculino">
+                <label for="">Masculino &#x1F468;</label>
+            </div>
+        </form>
+    </p>
+
+    <p>
+        Anos de empresa: <input type="number" name="anos" id="anos">
+    </p>
+
+    <p>
+        <input type="button" value="Conferir" onclick="conferir()">
+    </p>
+
+    <div id="res"></div>
+
+    <script>
+        function conferir(){
+            var res = document.getElementById('res')
+            var anos = Number(document.getElementById('anos').value)
+            var sal = Number(document.getElementById('sal').value)
+            var nome = String(document.getElementById('nome').value)
+            var sexo = document.getElementsByName('sexo')
+            for (var i = 0; i < sexo.length; i++) {
+                if(sexo[i].checked){
+                    var sexo = sexo[i].value
+                }                
+            }
+            switch (sexo) {
+                case 'Feminino':
+                    if(anos < 15){
+                        var N_sal = sal + ((5/100) * sal)
+                        res.innerHTML = `<p>Funcionária: ${nome}</p>`
+                        res.innerHTML += `Novo Salário: ${N_sal}`
+                    }else if(anos >= 15 && anos <= 20){
+                        var N_sal = sal + ((12/100) * sal)
+                        res.innerHTML = `<p>Funcionária: ${nome}</p>`
+                        res.innerHTML += `Novo Salário: ${N_sal}`
+                    }else{
+                        var N_sal = sal + ((23/100) * sal)
+                        res.innerHTML = `<p>Funcionária: ${nome}</p>`
+                        res.innerHTML += `Novo Salário: ${N_sal}`
+                    }
+                    break;
+            
+                default:
+                if(anos < 20){
+                        var N_sal = sal + ((3/100) * sal)
+                        res.innerHTML = `<p>Funcionário: ${nome}</p>`
+                        res.innerHTML += `Novo Salário: ${N_sal}`
+                    }else if(anos >= 20 && anos <= 30){
+                        var N_sal = sal + ((13/100) * sal)
+                        res.innerHTML = `<p>Funcionário: ${nome}</p>`
+                        res.innerHTML += `Novo Salário: ${N_sal}`
+                    }else{
+                        var N_sal = sal + ((25/100) * sal)
+                        res.innerHTML = `<p>Funcionário: ${nome}</p>`
+                        res.innerHTML += `Novo Salário: ${N_sal}`
+                    }
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
