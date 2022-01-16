@@ -76,3 +76,29 @@
 <a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex036.html" target="_blank">Ex036 - Programa de Pontos Saudáveis</a>
 
 <a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex037.html" target="_blank">Ex037 - Aumento de Salário</a>
+
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex038.html" target="_blank">Ex038 - Contagem Progressiva</a>
+
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex039.html" target="_blank">Ex039 - Contagem Regressiva</a>
+
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex040.html" target="_blank">Ex040 - Contagem de 3 em 3</a>
+
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex041.html" target="_blank">Ex041 - Contagem regressiva de 5 em 5</a>
+
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex042.html" target="_blank">Ex042 - Contagem de número Escolhido pelo Usuário</a>
+
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex043.html" target="_blank">Ex043 - Contagem de 30 até </a>
+
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex044.html" target="_blank">Ex044 - Contagem com incremento</a>
+
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex045.html" target="_blank">Ex045 - Incremento e Decremento</a>
+
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex046.html" target="_blank">Ex046 - Soma de Valores entre 6 e 100 com incremento valendo 2</a>
+
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex047.html" target="_blank">Ex047 - Soma com decremento de 5 em</a>
+
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex048.html" target="_blank">Ex048 - Digite 7 números para obter a soma</a>
+
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex049.html" target="_blank">Ex049 - Números Pares e Ímpares</a>
+
+<a href="https://rafaelhissa333.github.io/javascript/exercicios-da-apostila/ex050.html" target="_blank">Ex050 - Sorteio de 20 número</a>
