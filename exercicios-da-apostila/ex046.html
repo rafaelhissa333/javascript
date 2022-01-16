@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body onload="iniciar()">
+    <h1>Soma de Valores entre 6 e 100 com incremento valendo 2</h1>
+
+    <div id="res"></div>
+
+    <script>
+        function iniciar(){
+            var res = document.getElementById('res')
+            var cont = 6
+            var soma = 0
+
+            res.innerHTML = 'Soma entre: '
+            
+            while(cont <= 100){
+                if(cont != 100){
+                    res.innerHTML += `${cont} +`
+                }else{
+                    res.innerHTML += `${cont}`  
+                } 
+                var soma = soma + cont
+                cont += 2                                 
+            }
+            res.innerHTML += `<p>O resultado obtido foi: ${soma}</p>`
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem de 30 até 1</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body onload="iniciar()">
+    <h1>Contagem de 30 até 1</h1>
+    <hr>
+    <div id="res"></div>
+
+    <script>
+        function iniciar(){
+            var res = document.getElementById('res')
+            var cont = 30
+            if(cont % 4 == 0){
+                    res.innerHTML = `[${cont}]...`
+                }else{
+                    res.innerHTML = `${cont}...`
+                }
+            do{
+                cont--
+                if(cont % 4 == 0){
+                    res.innerHTML += `[${cont}]...`
+                }else{
+                    res.innerHTML += `${cont}...`
+                }
+            }while(cont-1 > 1)
+            cont--
+            res.innerHTML += `${cont} - Contagem Finalizada`
+            }
+    </script>
+</body>
+</html>

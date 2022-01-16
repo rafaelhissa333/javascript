@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma com decremento de 5 em 5</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            text-decoration: underline;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soma com decremento de 5 em 5</h1>
+    <hr>    
+
+    <p>
+        <input type="button" value="Clique para Iniciar" onclick="iniciar()">
+    </p>
+
+    <div id="res"></div>
+
+    <script>
+        function iniciar(){
+            var res = document.getElementById('res')
+            var soma = 0
+            var cont = 500
+
+            res.innerHTML = 'Soma entre os valores: '
+
+            do{
+                if(cont > 0){
+                    res.innerHTML += ` ${cont} +`
+                }else{
+                    res.innerHTML += ` ${cont}`
+                }
+                var soma = soma + cont
+                cont -= 50
+            }while(cont >= 0)
+            res.innerHTML += `<p>O resultado obtido foi: ${soma}</p>`
+        }
+    </script>
+</body>
+</html>

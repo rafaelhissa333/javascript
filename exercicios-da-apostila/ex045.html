@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incremento e Decremento</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+            font-size: 3em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Incremento e Decremento</h1>
+    <hr>
+
+    <p>
+        Digite o valor inicial: <input type="number" name="inicial" id="inicial">
+    </p>
+
+    <p>
+        Digite o valor final: <input type="number" name="final" id="final">
+    </p>
+
+    <p>
+        Digite o incremento: <input type="number" name="incremento" id="incremento" min="1">
+    </p>
+
+    <p>
+        <input type="submit" value="INICIAR CONTAGEM" onclick="inicio()">
+    </p>
+
+    <div id="res"></div>
+
+    <script>
+        function inicio(){
+            var res = document.getElementById('res')
+            var inicial = Number(document.getElementById('inicial').value)
+            var final = Number(document.getElementById('final').value)
+            var incremento = Number(document.getElementById('incremento').value)
+
+            if(incremento <= 0){
+                window.alert('Digite incrementos acima de 0')
+            }else{    
+            res.innerHTML = 'Contagem: '
+
+                 if(inicial < final){
+                    while(inicial <= final){
+                        res.innerHTML += `${inicial} `
+                        inicial += incremento
+                    }
+                     res.innerHTML += `Contagem Finalizada!`
+                }else if(inicial > final){
+                    do{
+                        res.innerHTML += `${inicial} `
+                        inicial -= incremento
+                    }while(inicial >= final)
+                    res.innerHTML += `Contagem Finalizada!`
+                }else{
+                    res.innerHTML = '<p>O valor inicial não pode ser o mesmo do valor final</p>'
+                } 
+            }
+            
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteio de 20 número</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sorteio de 20 número entre 0 e 10</h1>
+    <hr>
+    <p>
+        <input type="button" value="Mostrar" onclick="mostrar()">
+    </p>
+    <div id="res1"></div>
+    <div id="res2"></div>
+    <div id="res3"></div>
+    <script>
+        function mostrar(){
+            var res1 = document.getElementById('res1')
+            var res2 = document.getElementById('res2')
+            var res3 = document.getElementById('res3')
+            var cont = 1
+
+            res1.innerHTML = `<p>a) Números selecionados: </p>`
+            res2.innerHTML = `<p>b) Números acima de 5: </p>`
+            res3.innerHTML = `<p>c) Números divisíveis por 3: </p>`
+            
+
+            while(cont <= 20){
+                var num = Math.floor(Math.random()*10)+1
+                res1.innerHTML += ` ${num} `
+                if(num > 5){
+                    res2.innerHTML += ` ${num} `
+                }
+                if(num % 3 == 0){
+                    res3.innerHTML += ` ${num} `
+                }
+                cont++
+            }
+        }
+    </script>
+</body>
+</html>

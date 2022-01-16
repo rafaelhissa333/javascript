@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somatório</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline  ;
+        }
+    </style>
+</head>
+<body>
+    <h1>Digite 7 números para obter a soma</h1>
+    <hr>
+
+    <p>
+        <input type="button" value="Somar" onclick="somar()">
+    </p>
+
+    <div id="res"></div>
+
+    <script>
+        function somar(){
+            var res = document.getElementById('res')            
+            var cont = 1
+            var soma = 0
+
+            res.innerHTML = 'Soma dos valores digitados: '
+
+            while(cont <= 7){
+                var valor = Number(window.prompt(`Digite o ${cont}° valor`))
+                var soma = soma + valor
+                cont++                
+            }
+            res.innerHTML += soma
+        }
+    </script>
+</body>
+</html>

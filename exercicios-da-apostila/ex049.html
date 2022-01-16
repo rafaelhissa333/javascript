@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Pares Ímpares</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            text-decoration: underline;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Números Pares Ímpares</h1>
+    <hr>
+
+    <p>
+        <input type="button" value="Começar" onclick="comecar()">
+    </p>
+
+    <div id="res"></div>
+
+    <script>
+        function comecar(){
+            var res = document.getElementById('res')
+            var par = 0
+            var impar = 0
+            var cont = 1
+
+            res.innerHTML = `<p>Numeros Digitados: </p>`
+            
+            while(cont <= 6){
+                var num = Number(window.prompt(`Digite o ${cont}° valor`))   
+                res.innerHTML += `<p>${cont}° número: ${num}</p>`     
+                cont++
+                if(num % 2 == 0){
+                    var par = par + 1
+                }else{
+                    var impar = impar + 1
+                }
+            }
+            res.innerHTML += `<p>Quantidade de números pares: ${par}</p>`
+            res.innerHTML += `<p>Quantidade de números ímpares: ${impar}</p>`
+        }
+    </script>
+</body>
+</html>
