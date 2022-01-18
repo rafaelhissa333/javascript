@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peso e Altura</title>
+</head>
+<body>
+    <h1>Peso e Altura</h1>
+    <hr>
+    <p>
+        <input type="button" value="Verificar" onclick="verificar()">
+    </p>
+    <div id="res"></div>
+
+    <script>
+        function verificar(){
+            var res = document.getElementById('res')
+            var cont = 1
+            var altura_total = 0
+            var mais_90 = 0
+            var p_50_a_1_60 = 0
+            var a_1_90_p_100 = 0
+            res.innerHTML = ''
+
+            while(cont <= 7){
+                var peso = Number(window.prompt(`Digite o peso da ${cont}° pessoa`).replace(',','.'))
+                if(peso > 90){
+                    mais_90++
+                }
+                var altura = Number(window.prompt(`Digite a altura da ${cont}° pessoa`).replace(',','.'))
+                altura_total += (altura)
+                if(peso < 50 && altura < 1.60){
+                    p_50_a_1_60++
+                }
+                if(altura > 1.90 && peso > 100){
+                    a_1_90_p_100++
+                }
+                res.innerHTML += `<p>${cont}° pessoa: Peso: ${peso}kg - Altura: ${altura}m</p>` 
+                cont++
+            }
+            var media_altura = altura_total / 7
+            res.innerHTML += `<p>a) Média total de altura: ${(media_altura).toFixed(2)}m</p>`
+            res.innerHTML += `<p>b) Quantidade de pessoas que pesam mais que 90Kg: ${mais_90}</p>`
+            res.innerHTML += `<p>c) Quantidade de pessoas que pesam menos que 50Kg e medem abaixo de 1.60m: ${p_50_a_1_60}</p>`
+            res.innerHTML += `<p>d) Quantidade de pessoas que pesam mais que 100Kg e medem acima de 1.90m: ${a_1_90_p_100}</p>`
+        }
+    </script>
+</body>
+</html>
