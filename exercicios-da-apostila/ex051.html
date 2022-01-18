@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior e Menor Preço</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Maior e Menor Preço</h1>
+    <hr>
+
+    <p>
+        <input type="button" value="Verificar" onclick="verificar()">
+    </p>
+
+    <div id="res"></div>
+
+    <script>
+        function verificar(){
+            var res = document.getElementById('res')
+            var cont = 1
+            var maior = 0            
+
+            res.innerHTML = 'Preços:'  
+            
+            var preco = Number(window.prompt(`Digite o valor do ${cont}° produto`))
+
+            res.innerHTML += `<p>${cont}° Produto: ${preco}</p>`
+
+            cont++
+
+            var menor = preco
+            
+            while(cont <= 8){                
+                var preco = Number(window.prompt(`Digite o valor do ${cont}° produto`))
+                res.innerHTML += `<p>${cont}° Produto: ${preco}</p>`
+                if(preco > maior){
+                    var maior = preco
+                }
+                if(preco < menor){
+                    var menor = preco
+                }
+
+                cont++                
+            }
+            res.innerHTML += `<p>Maior: ${maior}</p>`   
+            res.innerHTML += `<p>Menor: ${menor}</p>`
+        }
+    </script>
+</body>
+</html>
