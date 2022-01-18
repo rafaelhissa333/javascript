@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idade e Sexo</title>
+</head>
+<body>
+    <h1>Idade e Sexo</h1>
+    <hr>
+    <p>
+        <input type="button" value="Verificar" onclick="verificar()">
+    </p>
+    <div id="res"></div>
+
+    <script>
+        function verificar(){
+            var res = document.querySelector('div#res')
+            var cont = 1
+            var mas = 0
+            var fem = 0
+            var Idade_total_m = 0
+            var Idade_total_f = 0
+            var fem_maior_20 = 0
+            res.innerHTML = ''
+            while(cont <= 5){
+                var sexo = String(window.prompt(`Qual o sexo da ${cont}° pessoa`))
+                if(sexo === 'm' || sexo === 'M'){
+                    var idade = Number(window.prompt(`Digite a idade da ${cont}° pessoa`))
+                    if((idade + 1) % (idade + 1) != 0){
+                        window.alert('IDADE INVÁLIDA')
+                        cont -= 1
+                        mas--
+                    }
+                    mas++
+                    var Idade_total_m = idade + Idade_total_m
+                }else if(sexo === 'f' || sexo === 'F'){
+                    var idade = Number(window.prompt(`Digite a idade da ${cont}° pessoa`))
+                    if((idade + 1) % (idade + 1) != 0){
+                        window.alert('IDADE INVÁLIDA')
+                        cont -= 1
+                        fem--
+                    }
+                    fem++
+                    var Idade_total_f = idade + Idade_total_f
+                    if(idade > 20){
+                        fem_maior_20++
+                    }
+                }else{
+                    window.alert('OPÇÃO INVÁLIDA')
+                    cont -= 1
+                }
+                cont++
+            }
+            var media_grupo =         
+            res.innerHTML += `<p>a) Homens Cadastrados: ${Number(mas)}</p>`
+            res.innerHTML += `<p>b) Mulheres Cadastradas: ${Number(fem)}</p>`
+            res.innerHTML += `<p>c) Média de idade do grupo: ${Number((Idade_total_f + Idade_total_m) / 5).toFixed(2)}</p>`
+            res.innerHTML += `<p>d) Média de idade dos homens: ${Number(Idade_total_m / mas).toFixed(2)}</p>`
+            res.innerHTML += `<p>e) Mulheres com mais de 20 anos: ${Number(fem_maior_20)}</p>`  
+        }
+    </script>
+</body>
+</html>
