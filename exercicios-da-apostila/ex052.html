@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média de Idades</title>
+</head>
+<body>
+    <h1>Média de Idades</h1>
+    <hr>
+    <p>
+        <input type="button" value="Verificar" onclick="verificar()">
+    </p>
+    <div id="res"></div>
+
+    <script>
+        function verificar(){
+            var res = document.getElementById('res')
+            var cont = 1
+            var media = 0
+            var idade_total = 0
+            var maior_18 = 0
+            var menor_5 = 0
+            var maior = 0
+
+            res.innerHTML = ''
+
+            while(cont <= 5){
+                var idade = Number(window.prompt(`Digite a ${cont}° idade`))
+                var idade_total = idade_total + idade
+                if(idade > 18){
+                    maior_18++
+                }
+                if(idade < 5){
+                    menor_5++
+                }
+                if(idade > maior){
+                    maior = idade
+                }
+                cont++
+            }
+            var media = idade_total / 5
+            res.innerHTML += `<p>Média de idades : ${media}</p>`
+            res.innerHTML += `<p>Maior que 18 : ${maior_18}</p>`
+            res.innerHTML += `<p>Menor que 5 : ${menor_5}</p>`
+            res.innerHTML += `<p>Maior idade : ${maior} anos</p>`
+        }
+    </script>
+</body>
+</html>
