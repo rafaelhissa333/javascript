@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salario dos funcionários</title>
+</head>
+<body>
+    <h1>Salario dos funcionários</h1>
+    <hr>
+    <p>
+        <input type="button" value="Começar" onclick="comecar()">
+    </p>
+    <div id="res"></div>
+
+    <script>
+        function comecar(){
+            var res = document.getElementById('res')
+            var cont = 1
+            var sal_f = 0
+            var sal_m = 0
+            var S_ou_N = 's'
+            res.innerHTML = ''
+            while(S_ou_N == 's' || S_ou_N == 'S'){
+                var sexo = String(window.prompt(`Digite o sexo da ${cont}° pessoa`))                
+                if(sexo == 'm' || sexo == 'M'){
+                    var sal = window.prompt(`Digite o salário da ${cont}° pessoa`)
+                    while(){
+                        window.alert('ERRO DIGITE UM SALÁRIO VÁLIDO!')
+                        var sal = window.prompt(`Digite o salário da ${cont}° pessoa`)
+                    }                    
+                    
+                }else if(sexo == 'f' || sexo == 'F'){
+                    var sal = Number(window.prompt(`Digite o salário da ${cont}° pessoa`))
+                    if((sal % sal == 0) && sal > 0){
+                        sal_f += sal
+                    }else{
+                        window.alert('ERRO DIGITE UM SALÁRIO VÁLIDO!')
+                        cont--
+                    }
+
+                }else{
+                    window.alert('OPÇÃO INVÁLIDA! ESCOLHA ENTRE MASCULINO OU FEMININO')
+                    cont--
+                }
+                cont++
+                S_ou_N = window.prompt('QUER CONTINUAR? S/N:')
+                while((S_ou_N != 's') && (S_ou_N != 'S') && (S_ou_N != 'n') && (S_ou_N != 'N')){
+
+                    S_ou_N = window.prompt('OPÇÃO INVÁLIDA: QUER CONTINUAR? S/N:')
+                }
+                
+            }
+            res.innerHTML += `<P>TOTAL DO SALÁRIO DOS HOMENS: ${sal_m}</P>` 
+
+            res.innerHTML += `<P>TOTAL DO SALÁRIO DAS MULHERES: ${sal_f}</P>` 
+        }
+    </script>
+</body>
+</html>
