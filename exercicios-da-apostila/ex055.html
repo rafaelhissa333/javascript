@@ -30,7 +30,7 @@
                     res.innerHTML += `<p>NÚMERO ESCCOLHIDO PELO JOGADOR: ${num_jogador}</p>`
                     res.style.color = 'green'
                     cont += 4
-                }else if((num_jogador % num_jogador != 0)){
+                }else if((num_jogador % num_jogador != 0) || (num_jogador > 10 || num_jogador < 1)){
                     window.alert('ERRO! O VALOR DIGITADO É INVÁLIDO')
                     cont--
                 }else{
