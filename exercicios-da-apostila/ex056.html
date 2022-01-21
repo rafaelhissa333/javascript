@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somatório de vários números</title>
+</head>
+<body>
+    <h1>Somatório de vários números</h1>
+    <hr>
+    <p>
+        <input type="button" value="Começar" onclick="começar()">
+    </p>
+    <div id="res"></div>
+
+    <script>
+        function começar(){
+            var res = document.getElementById('res')
+            var soma = 0
+            var cont = 1   
+            
+            
+            while((val+1) % (val+1) != 0){
+                var val = Number(window.prompt(`Digite o ${cont}° valor`))
+                if((val+1) % (val+1) == 0){
+                    
+                }else{
+                    window.alert('VALOR DIGITADO É INVÁLIDO! TENTE NOVAMENTE!')
+                }
+                
+            }
+
+            while(val != 1111){
+                soma += val
+                cont++             
+                var val = Number(window.prompt(`Digite o ${cont}° valor`))
+                if((val+1) % (val+1) == 0){
+                    
+                }else{
+                    window.alert('VALOR DIGITADO É INVÁLIDO! TENTE NOVAMENTE!')
+                    cont--
+                }
+            }
+            res.innerHTML = `Resultado da Soma: ${soma}`
+        }
+    </script>
+</body>
+</html>
