@@ -4,52 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo de advinhação 2</title>
+    <title>Jogo da Advinhação 2</title>
 </head>
 <body>
-    <h1>Jogo de advinhação 2</h1>
+    <h1>Jogo da Advinhação 2</h1>
     <hr>
     <p>
-        <input type="button" value="Jogar" onclick="jogar()">
+        <input type="button" value="JOGAR" onclick="jogar()">
     </p>
     <div id="res"></div>
-    <div id="res2"></div>
 
     <script>
         function jogar(){
             var res = document.getElementById('res')
             var cont = 1
-            var tentativas = 4
 
             res.innerHTML = ''
-            res2.innerHTML = ''
 
             while(cont <= 4){
-                var num_escol = Number(window.prompt(`${cont}° tentativa. Escolha um número entre 1 e 10`))
-                if(num_escol >= 1 && num_escol <= 10){
-                    var num_aleat = Math.floor(Math.random()*10)+1
-                }else{
-                    window.alert('ERRO: O VALOR DIGITADO NÃO ESTÁ ENTRE 1 E 10! TENTE NOVAMENTE')
-                    cont--
-                }
-                if(num_escol == num_aleat){
-                    res.innerHTML += `<p>NÚMERO ESCOLHIDO PELO USUÁRIO: ${num_escol}</p>`
-                    res.innerHTML += `<p>NÚMERO ESCOLHIDO PELO COMPUTADOR: ${num_aleat}</p>`
-                    res2.innerHTML += `PARABÉNS! VOCÊ GANHOU!!!`
-                    res2.style.color = 'green'
+                var num_jogador = Number(window.prompt(`${cont}° tentativa - Escolha um número de 1 a 10`))
+                var num_pc = Math.floor(Math.random()*10) + 1
+                if(num_jogador == num_pc){
+                    window.alert('PARABÉNS! VOCÊ GANHOU!!')
+                    res.innerHTML += `<p>NÚMERO ESCCOLHIDO PELO PC: ${num_pc}</p>`
+                    res.innerHTML += `<p>NÚMERO ESCCOLHIDO PELO JOGADOR: ${num_jogador}</p>`
+                    res.style.color = 'green'
                     cont += 4
+                }else if((num_jogador % num_jogador != 0)){
+                    window.alert('ERRO! O VALOR DIGITADO É INVÁLIDO')
+                    cont--
                 }else{
-                    tentativas--
-                    window.alert(`VOCÊ ERROU! SOBROU ${tentativas} tentativas`)
-                }
-                if(tentativas == 0){
-                    res2.innerHTML += `QUE PENA! VOCÊ PERDEU! JOGUE NOVAMENTE!`
-                    res2.style.color = 'red'
+                    if(4 - cont > 1){
+                        window.alert(`VOCÊ ERROU! VOCÊ TEM ${4 - cont} CHANCES`)
+                    }else if (4 - cont == 1){
+                        window.alert(`VOCÊ ERROU! VOCÊ AINDA TEM ${4 - cont} CHANCE`)                        
+                    }else{
+                        window.alert(`VOCÊ PERDEU! VOCÊ NÃO TEM MAIS CHANCES`)  
+                        res.innerHTML = 'VOCÊ PERDEU! COMECE O JOGO NOVAMENTE!'
+                        res.style.color = 'red'
+                    }
+                    
                 }
                 cont++
             }
-            
-            
         }
     </script>
 </body>
