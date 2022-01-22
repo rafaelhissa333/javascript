@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media de idade da turma</title>
+</head>
+<body>
+    <h1>Media de idade da turma</h1>
+    <hr>
+    <p>
+        <input type="button" value="Calcular" onclick="calcular()">
+    </p>
+    <div id="res"></div>
+
+    <script>
+        function calcular(){
+            var res = document.getElementById('res')
+            var cont = 1
+            var soma_idade = 0
+
+            var idade = Number(window.prompt(`Idade do ${cont}° Aluno`))
+            while((idade % idade != 0) || idade <= 0){
+                window.alert('IDADE INVÁLIDA! TENTE NOVAMENTE')
+                var idade = Number(window.prompt(`Idade do ${cont}° Aluno`))
+            }            
+            cont++
+            res.innerHTML = ''
+            while(idade != 999){
+                soma_idade += idade  
+                var idade = Number(window.prompt(`Idade do ${cont}° Aluno`))
+                if((idade % idade != 0) || idade <= 0){
+                    window.alert('IDADE INVÁLIDA! TENTE NOVAMENTE')
+                    idade = 0
+                    cont--
+                }                       
+                cont++
+            }
+            cont -= 2
+            var media_idade = soma_idade / cont
+            res.innerHTML += `<p>TOTAL DE ALUNOS NA TURMA: ${cont} ALUNOS</p>`
+            res.innerHTML += `<p>IDADE TOTAL: ${soma_idade}</p>`
+            res.innerHTML += `<p>MÉDIA DE IDADE DOS ALUNOS: ${media_idade.toFixed(2)}</p>`
+        }
+    </script>
+</body>
+</html>
