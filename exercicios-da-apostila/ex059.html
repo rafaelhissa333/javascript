@@ -22,9 +22,57 @@
             var cont = 1
             var idade_h = 0
             var idade_m = 0
+            var maior_idade = 0
+            var jovem_mulher = 0         
             S_ou_N = 's'
 
             res.innerHTML = ''
+
+            //--------------------- PARTE 1 ---------------------------
+
+            var sexo = window.prompt(`Digite o sexo da ${cont}° pessoa`)
+
+                while(sexo != 'f' && sexo != 'F' && sexo != 'M' && sexo != 'm'){
+                        var sexo = window.prompt(`ERRO: Digite o sexo da ${cont}° pessoa`)
+                    }                
+
+                if(sexo == 'm' || sexo == 'M'){
+                    var idade = Number(window.prompt(`Digite a idade da ${cont}° pessoa`))
+                    while(((idade+1) % (idade+1) != 0) || (idade <= -1)){
+                        var idade = Number(window.prompt(`IDADE INVÁLIDA: Digite a idade da ${cont}° pessoa`))
+                    }
+                        homens += 1
+                        idade_h += idade
+                }else{
+                    var idade = Number(window.prompt(`Digite a idade da ${cont}° pessoa`))
+                    while(((idade+1) % (idade+1) != 0) || (idade <= -1)){
+                        var idade = Number(window.prompt(`IDADE INVÁLIDA: Digite a idade da ${cont}° pessoa`))
+                    }
+                        mulheres += 1
+                        idade_m += idade
+                }
+
+                var S_ou_N = window.prompt('DESEJA CONTINUAR? S/N: ')
+                while(S_ou_N != 's' && S_ou_N != 'S' && S_ou_N != 'n' && S_ou_N != 'N'){
+                    var S_ou_N = window.prompt('COMANDO INVÁLIDO! DESEJA CONTINUAR? S/N: ')
+                }
+
+                if(idade > maior_idade){
+                    maior_idade = idade
+                }
+                cont++
+
+                
+                if((mulheres == 0) && ((S_ou_N == 'n') || (S_ou_N == 'N'))){
+                    jovem_mulher = 0
+                }else{
+                    jovem_mulher = idade
+                }
+
+                window.alert(`Mulher mais jovem: ${jovem_mulher}`)
+                
+                
+            //--------------------- PARTE 2 ---------------------------
 
             while(S_ou_N == 's' || S_ou_N == 'S'){
 
@@ -36,28 +84,53 @@
 
                 if(sexo == 'm' || sexo == 'M'){
                     var idade = Number(window.prompt(`Digite a idade da ${cont}° pessoa`))
-                    while((idade+1) % (idade+1) != 0){
+                    while(((idade+1) % (idade+1) != 0) || (idade <= -1)){
                         var idade = Number(window.prompt(`IDADE INVÁLIDA: Digite a idade da ${cont}° pessoa`))
                     }
                         homens += 1
                         idade_h += idade
                 }else{
                     var idade = Number(window.prompt(`Digite a idade da ${cont}° pessoa`))
-                    while((idade+1) % (idade+1) != 0){
+                    while(((idade+1) % (idade+1) != 0) || (idade <= -1)){
                         var idade = Number(window.prompt(`IDADE INVÁLIDA: Digite a idade da ${cont}° pessoa`))
-                    }
+                    }                        
                         mulheres += 1
                         idade_m += idade
+                        if((idade < jovem_mulher) && (mulheres >=1)){
+                            jovem_mulher = idade
+                        }else if((idade > jovem_mulher) && (mulheres >=1)){
+                            jovem_mulher = jovem_mulher
+                        }
                 }
 
                 var S_ou_N = window.prompt('DESEJA CONTINUAR? S/N: ')
                 while(S_ou_N != 's' && S_ou_N != 'S' && S_ou_N != 'n' && S_ou_N != 'N'){
                     var S_ou_N = window.prompt('COMANDO INVÁLIDO! DESEJA CONTINUAR? S/N: ')
                 }
+
+                if((mulheres == 0) && ((S_ou_N == 'n') || (S_ou_N == 'N'))){
+                    jovem_mulher = 0
+                }
+
+                if(idade > maior_idade){
+                    maior_idade = idade
+                }
                 cont++
             }
+
+                      
             res.innerHTML += `<p>Idade Homens: ${idade_h}</p>`
             res.innerHTML += `<p>Idade Mulheres: ${idade_m}</p>`
+            res.innerHTML += `<p>Maior idade lida: ${maior_idade}</p>`
+            res.innerHTML += `<p>Homens Cadastrados: ${homens}</p>`
+            res.innerHTML += `<p>Mulher mais jovem: ${jovem_mulher}</p>`
+            if(homens > 0){
+                var media_idade_h = idade_h / homens
+                res.innerHTML += `<p>Média de idade entre homens: ${media_idade_h}</p>`
+            }else{
+                res.innerHTML += 'Média de idade entre homens: NENHUM HOMEM FOI REGISTRADO'
+            }
+            
         }
     </script>
 </body>
