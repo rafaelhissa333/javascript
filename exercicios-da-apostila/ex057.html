@@ -25,20 +25,19 @@
             while(S_ou_N == 's' || S_ou_N == 'S'){
                 var sexo = String(window.prompt(`Digite o sexo da ${cont}° pessoa`))                
                 if(sexo == 'm' || sexo == 'M'){
-                    var sal = window.prompt(`Digite o salário da ${cont}° pessoa`)
-                    while(){
+                    var sal = Number(window.prompt(`Digite o salário da ${cont}° pessoa`))
+                    while(sal <= 0 || (sal % sal != 0)){
                         window.alert('ERRO DIGITE UM SALÁRIO VÁLIDO!')
-                        var sal = window.prompt(`Digite o salário da ${cont}° pessoa`)
-                    }                    
-                    
+                        var sal = Number(window.prompt(`Digite o salário da ${cont}° pessoa`))
+                    }
+                sal_m += sal
                 }else if(sexo == 'f' || sexo == 'F'){
                     var sal = Number(window.prompt(`Digite o salário da ${cont}° pessoa`))
-                    if((sal % sal == 0) && sal > 0){
-                        sal_f += sal
-                    }else{
+                    while(sal <= 0 || (sal % sal != 0)){
                         window.alert('ERRO DIGITE UM SALÁRIO VÁLIDO!')
-                        cont--
+                        var sal = Number(window.prompt(`Digite o salário da ${cont}° pessoa`))
                     }
+                sal_f += sal
 
                 }else{
                     window.alert('OPÇÃO INVÁLIDA! ESCOLHA ENTRE MASCULINO OU FEMININO')
