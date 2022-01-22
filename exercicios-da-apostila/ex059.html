@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sexo e Idade</title>
+</head>
+<body>
+    <h1>Sexo e Idade</h1>
+    <hr>
+    <p>
+        <input type="button" value="Verificar" onclick="verificar()">
+    </p>
+    <div id="res"></div>
+    <script>
+        function verificar(){
+            var res = document.getElementById('res')
+            var cont = 1
+            var homens = 0
+            var mulheres = 0
+            var cont = 1
+            var idade_h = 0
+            var idade_m = 0
+            S_ou_N = 's'
+
+            res.innerHTML = ''
+
+            while(S_ou_N == 's' || S_ou_N == 'S'){
+
+                var sexo = window.prompt(`Digite o sexo da ${cont}° pessoa`)
+
+                while(sexo != 'f' && sexo != 'F' && sexo != 'M' && sexo != 'm'){
+                        var sexo = window.prompt(`ERRO: Digite o sexo da ${cont}° pessoa`)
+                    }                
+
+                if(sexo == 'm' || sexo == 'M'){
+                    var idade = Number(window.prompt(`Digite a idade da ${cont}° pessoa`))
+                    while((idade+1) % (idade+1) != 0){
+                        var idade = Number(window.prompt(`IDADE INVÁLIDA: Digite a idade da ${cont}° pessoa`))
+                    }
+                        homens += 1
+                        idade_h += idade
+                }else{
+                    var idade = Number(window.prompt(`Digite a idade da ${cont}° pessoa`))
+                    while((idade+1) % (idade+1) != 0){
+                        var idade = Number(window.prompt(`IDADE INVÁLIDA: Digite a idade da ${cont}° pessoa`))
+                    }
+                        mulheres += 1
+                        idade_m += idade
+                }
+
+                var S_ou_N = window.prompt('DESEJA CONTINUAR? S/N: ')
+                while(S_ou_N != 's' && S_ou_N != 'S' && S_ou_N != 'n' && S_ou_N != 'N'){
+                    var S_ou_N = window.prompt('COMANDO INVÁLIDO! DESEJA CONTINUAR? S/N: ')
+                }
+                cont++
+            }
+            res.innerHTML += `<p>Idade Homens: ${idade_h}</p>`
+            res.innerHTML += `<p>Idade Mulheres: ${idade_m}</p>`
+        }
+    </script>
+</body>
+</html>
